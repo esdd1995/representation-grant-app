@@ -38,7 +38,7 @@
                                 <template #button-content style="background-color: #003366">
                                     <span class="fa fa-user"></span> {{ userName }}
                                 </template>
-                                <!--<b-dropdown-item @click="runsurvey()">SurveyJS Editor</b-dropdown-item>-->
+                                <b-dropdown-item @click="runsurvey()">SurveyJS Editor</b-dropdown-item>
                                 <b-dropdown-item @click="logout(false)">Logout</b-dropdown-item>
                             </b-dropdown>
                         </div>
@@ -106,11 +106,10 @@ export default class NavigationTopbar extends Vue {
         });
     }
 
-    /* In case we need drop down surveyeditor button functionality back */
-    // public runsurvey(){
-    //     this.UpdateHideHeaderFooter(true)
-    //     this.$router.push({name: "surveyeditor"})
-    // }
+    public runsurvey(){
+        this.UpdateHideHeaderFooter(true)
+        this.$router.push({name: "surveyeditor"})
+    }
 
 };
 </script>

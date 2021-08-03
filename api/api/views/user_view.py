@@ -8,7 +8,6 @@ from rest_framework.views import APIView
 
 from api.models.user import User
 from core.auth import build_get_user_object
-from urllib.parse import urlparse
 
 
 class UserView(APIView):
