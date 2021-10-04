@@ -1,7 +1,8 @@
 import * as showdown from "showdown";
 import { addQuestionTypesVue } from "./vue-question-types";
-const util = require('./js/util');
-const glossaryJson = require('./glossary.json')
+import util from "./js/util";
+
+import glossaryJson from "./glossary.json";
 
 const terms = {};
 var markdownConverter = new showdown.Converter({

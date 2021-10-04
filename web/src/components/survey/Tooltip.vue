@@ -17,7 +17,7 @@
 <script lang="ts">
     import { Component, Vue, Prop } from 'vue-property-decorator';
 
-    const glossaryJson = require('./glossary.json')
+    import glossaryJson from "./glossary.json";
    
 
     @Component
