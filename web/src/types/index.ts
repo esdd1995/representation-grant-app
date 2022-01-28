@@ -17,6 +17,17 @@ interface Recipient {
     key: string;
 }
 
+interface P1Stat {
+    generated: boolean;
+    date: Date;
+}
+
+interface P9Stat {
+    generated: boolean;
+    date: Date;
+    count: number;
+}
+
 //Used by codegen:
 interface AddressAndContact {
     street?: string;

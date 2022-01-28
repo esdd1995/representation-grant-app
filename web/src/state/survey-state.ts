@@ -30,3 +30,11 @@ export const setRecipients = newRecipients => (recipients.value = newRecipients)
 const prevAddresses = ref<AddressAndContact[]>([]);
 export const getPrevAddresses = computed(() => prevAddresses.value);
 export const setPrevAddresses = newPrevAddresses => (prevAddresses.value = newPrevAddresses);
+
+const p1Stats = ref<P1Stat[]>([]);
+export const getP1Stats = computed(() => p1Stats.value);
+export const setP1Stats = newP1Stats => (p1Stats.value = newP1Stats);
+
+const p9Stats = ref<P9Stat[]>([]);
+export const getP9Stats = computed(() => p9Stats.value);
+export const setP9Stats = newP9Stats => (p9Stats.value = newP9Stats);

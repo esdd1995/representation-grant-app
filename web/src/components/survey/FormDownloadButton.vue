@@ -39,6 +39,7 @@ import FormP1 from "@/components/pdf/FormP1.vue";
 import FormP9 from "@/components/pdf/FormP9.vue";
 import LoadingSpinner from "@/components/utils/LoadingSpinner.vue";
 import { saveSurvey } from "@/utils/utils";
+import { getP1Stats, getP9Stats, setP1Stats, setP9Stats } from "@/state/survey-state";
 
 export default defineComponent({
   components: {
@@ -77,12 +78,37 @@ export default defineComponent({
       }
     });
 
+    const trackStats = formName => {
+      if (formName === "FormP1") {
+        let stat: P1Stat = {
+          generated: true,
+          date: new Date()
+        };
+        let statList = getP1Stats.value;
+        statList.push(stat);
+        setP1Stats(statList);
+      } else if (formName === "FormP9") {
+        let stat: P9Stat = {
+          generated: true,
+          date: new Date(),
+          count: 1
+        };
+        let statList = getP9Stats.value;
+        statList.push(stat);
+        setP9Stats(statList);
+      } else {
+        console.log("No matching stats for form:", formName);
+      }
+      console.log("Form statistics:", getP1Stats, getP9Stats);
+    }
+
     const downloadPdf = async () => {
       state.loading = true;
       saveSurvey();
       //Not ideal for Typescript.
       await form.value.onPrint();
       state.loading = false;
+      trackStats(state.component);
     };
 
     return {
