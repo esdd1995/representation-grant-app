@@ -302,7 +302,7 @@ export const toNextQuestion = options => {
     setTimeout(() => {
       const element = document.getElementById(nextQuestion.id);
       if (element) {
-        element.scrollIntoView({ behavior: "smooth", block: "start" })
+        element.scrollIntoView({ behavior: "smooth", block: "center" })
       }
     }, 1);
   }

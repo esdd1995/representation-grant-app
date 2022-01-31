@@ -91,15 +91,13 @@ export default defineComponent({
         let stat: P9Stat = {
           generated: true,
           date: new Date(),
-          count: 1
+          count: 1 // dummy value for now
         };
         let statList = getP9Stats.value;
         statList.push(stat);
         setP9Stats(statList);
-      } else {
-        console.log("No matching stats for form:", formName);
       }
-      console.log("Form statistics:", getP1Stats, getP9Stats);
+      console.log("Form statistics:", getP1Stats.value, getP9Stats.value);
     }
 
     const downloadPdf = async () => {
