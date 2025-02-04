@@ -85,7 +85,7 @@ build-web() {
     --copy \
     -e WEB_BASE_HREF=${WEB_BASE_HREF} \
     '../web' \
-    'centos/nodejs-10-centos7:10' \
+    'centos/nodejs-12-centos7:12' \
     ${COMPOSE_PROJECT_NAME}'-web-artifacts'
   echo -e "===================================================================================================="
 
@@ -117,7 +117,7 @@ build-web-dev() {
     --copy \
     -e "DEV_MODE=true" \
     '../web' \
-    'centos/nodejs-10-centos7:10' \
+    'centos/nodejs-12-centos7:12' \
     ${COMPOSE_PROJECT_NAME}'-web-dev'
   echo -e "===================================================================================================="
 }
@@ -153,7 +153,7 @@ build-api() {
   ${S2I_EXE} build \
     --copy \
     '../api' \
-    'centos/python-36-centos7' \
+    'registry.fedoraproject.org/f33/python3' \
     ${COMPOSE_PROJECT_NAME}'-api'
   echo -e "===================================================================================================="
 }
@@ -167,6 +167,10 @@ build-pdf() {
 }
 
 configureEnvironment () {
+  if [ -f .env ]; then
+    echo -e "\nLoading environment variables from .env ...\n"
+    source .env
+  fi
   for arg in $@; do
     case "$arg" in
       *=*)
