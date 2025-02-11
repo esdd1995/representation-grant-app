@@ -50,7 +50,7 @@ parameters:
     displayName: Source Image Tag
     description: The tag of the source image.
     required: true
-    value: 1-182
+    value: latest
   - name: SOURCE_IMAGE_NAMESPACE
     displayName: Namespace
     required: true
