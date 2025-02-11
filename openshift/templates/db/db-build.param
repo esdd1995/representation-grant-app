@@ -4,8 +4,9 @@
 # Template File: ../openshift/templates/db/db-build.yaml
 #=========================================================
 NAME=db
-OUTPUT_IMAGE_TAG=latest
-SOURCE_IMAGE_KIND=ImageStreamTag
-SOURCE_IMAGE_NAME=postgresql
-SOURCE_IMAGE_TAG=12
-SOURCE_IMAGE_NAMESPACE=openshift
+OUTPUT_IMAGE_TAG= latest
+SOURCE_IMAGE_KIND= DockerImage
+SOURCE_IMAGE_REGISTRY=registry.redhat.io/
+SOURCE_IMAGE_NAME= rhel8/postgresql-12
+SOURCE_IMAGE_TAG=1-182
+SOURCE_IMAGE_NAMESPACE=583dbf-tools

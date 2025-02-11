@@ -15,7 +15,7 @@ objects:
           from:
             kind: ${SOURCE_IMAGE_KIND}
             namespace: ${SOURCE_IMAGE_NAMESPACE}
-            name: ${SOURCE_IMAGE_NAME}:${SOURCE_IMAGE_TAG}
+            name: ${SOURCE_IMAGE_REGISTRY}${SOURCE_IMAGE_NAME}:${SOURCE_IMAGE_TAG}
           # importPolicy:
           #   scheduled: true
 parameters:
@@ -35,17 +35,22 @@ parameters:
     displayName: Source Image Kind
     description: The 'kind' (type) of the  source image; typically ImageStreamTag, or DockerImage.
     required: true
-    value: ImageStreamTag
+    value: DockerImage
+  - name: SOURCE_IMAGE_REGISTRY
+    displayName:  Source Image Registry
+    description: The name of the Source Image Registry.
+    required: false
+    value: registry.redhat.io/
   - name: SOURCE_IMAGE_NAME
     displayName: Source Image Name
     description: The name of the source image.
     required: true
-    value: postgresql
+    value: rhel8/postgresql-12
   - name: SOURCE_IMAGE_TAG
     displayName: Source Image Tag
     description: The tag of the source image.
     required: true
-    value: '12'
+    value: 1-182
   - name: SOURCE_IMAGE_NAMESPACE
     displayName: Namespace
     required: true
