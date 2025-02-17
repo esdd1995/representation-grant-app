@@ -84,17 +84,16 @@
             <div class="m-3">
                 This service has only been developed for situations where:
                 <ul class="mt-3">    
-                    <li>Only a single person is applying for the Representation Grant.</li>
+                    <li>Only a single person is applying for the Representation Grant; and</li>
                     <li>You are one of the following:</li>
                     <ul>
-                        <li>a <b>spouse</b> of the deceased,</li>
-                        <li>a child of the deceased,</li>
-                        <li>someone who the deceased owed more than $10,000, or</li>
-                        <li>you can also be a <b>legal guardian, nominee</b> or <b>personal representative</b> for someone listed above.</li>
+                        <li>A <b>spouse</b> of the deceased,</li>
+                        <li>A <b>child</b> of the deceased,</li>
+                        <li>You can also be a <b>legal guardian, nominee</b> or <b>personal representative</b> for someone listed above.</li>
                     </ul>
                     <li>Even if you are one of the people listed above, this service can <b>NOT</b> help you if one of the deceased’s children has died before them and that child has children of their own.</li>
                 </ul>
-                <b>Note:</b> If there is no surviving spouse, descendant or creditor identified, other than yourself, at this time, this service cannot help you apply for a Representation Grant. For more information on who may need to be notified, refer to <a href="https://www.bclaws.gov.bc.ca/civix/document/id/complete/statreg/168_2009_03_1#subrule_d1e33580" target="_blank" >Supreme Court Civil Rule 25-2(2)</a>
+                <b>Note:</b> If there is no surviving spouse, descendant or creditor identified, other than yourself, this service cannot help you apply for a Representation Grant. For more information on who may need to be notified, refer to <a href="https://www.bclaws.gov.bc.ca/civix/document/id/complete/statreg/168_2009_03_1#subrule_d1e33580" target="_blank" >Supreme Court Civil Rule 25-2(2)</a>
             </div>
             <template v-slot:modal-footer>
                 <b-button variant="secondary" @click="openInfoModal = false">Close</b-button>
