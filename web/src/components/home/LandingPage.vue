@@ -18,10 +18,9 @@
                     <b-row style="margin-left: 15rem;margin-right: 15rem;" class="info-section mb-2">
                         
                         <b-col cols="6" style="padding: 1rem 1rem 0rem 2rem;">
-                            <p style="font-weight: bold; margin-bottom: 0;">Step 1: Pre-qualify Questions</p>
+                            <p style="font-weight: bold; margin-bottom: 0;">Step 1: Is this service for you?</p>
                             <p class="mb-3">
-                                Answer qualifying questions to ensure that this service is appropriate for you to use. 
-                                Start by clicking New User – Let’s get started.
+                                Click “Let’s get started” to review application limitations.
                             </p>                            
                             <p style="font-weight: bold; margin-bottom: 0;">Step 2: Register or Login</p>
                             <p>
@@ -51,17 +50,17 @@
                     <b-card v-if="!isLoggedIn" style="border: none; margin-left: 25rem;margin-right: 25rem;" bg-variant="transparent">
                         <b-row class="how-works-section my-4">
                             <b-col style="padding: 0;"> 
-                                <b-row class="user-type justify-content-center">
+                                <!-- <b-row class="user-type justify-content-center">
                                     New Users
-                                </b-row>
+                                </b-row> -->
                                 <div class="row justify-content-center">                       
-                                    <a class="btn btn-primary text-white btn-lg register-button" style="padding-left: 4.5rem; padding-right: 4.5rem;" @click="navigate('new')">
+                                    <a class="btn btn-primary text-white btn-lg register-button" style="padding-left: 4.5rem; padding-right: 4.5rem;" @click="navigate('returning')">
                                         Let's get started
                                     </a>                        
                                 </div>
                             </b-col>
 
-                            <b-col style="padding: 0;">
+                            <!-- <b-col style="padding: 0;">
                                 <b-row class="user-type">
                                     Returning Users
                                 </b-row>
@@ -70,7 +69,7 @@
                                         Login with my <strong> Basic BCeID</strong>                                                                               
                                     </a>
                                 </div>
-                            </b-col>
+                            </b-col> -->
                         </b-row>
                     </b-card>
                 </b-card>
@@ -97,7 +96,7 @@
             </div>
             <template v-slot:modal-footer>
                 <b-button variant="secondary" @click="openInfoModal = false">Close</b-button>
-                <b-button variant="primary" @click="confirmLogin()">Continue</b-button>
+                <b-button variant="primary" @click="goToLoginPage()">Continue</b-button>
             </template>
             <template v-slot:modal-header-close>
                 <b-button
@@ -154,6 +153,10 @@ export default class LandingPage extends Vue {
     public confirmLogin(){
         this.openInfoModal = false;
         this.$router.push({ name: "applicant-status" });
+    }
+    public goToLoginPage(){
+        this.openInfoModal = false;
+        this.$router.push({ name: "qualified" });
     }
     
     public determineUserType () {

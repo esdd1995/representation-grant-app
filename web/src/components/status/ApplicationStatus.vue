@@ -87,7 +87,7 @@
                         variant="success" 
                         size="md"
                         class="application-button" 
-                        @click="beginApplication()"
+                        @click="preQualify()"
                     >Begin NEW Session</b-button>
                 </b-col>
                 <b-col class="m-0 p-0" cols="3">                   
@@ -203,6 +203,9 @@ export default class ApplicationStatus extends Vue {
         window.addEventListener('resize', this.getWindowHeight);
         this.extractFilingLocations();
         this.getWindowHeight();
+    }
+    public preQualify() {
+        this.$router.push({ name: "pre-qualification" });
     }
 
     public getWindowHeight() {
