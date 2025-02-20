@@ -4,7 +4,6 @@
         <b-button v-if="displayButton" @click="onSubmit" variant="success">
             <b-icon-check-circle-fill/> Next
         </b-button>
-       
     </b-container>
 </template>
 
@@ -29,6 +28,12 @@ export default class PreQualification extends Vue {
 
     @commonState.State
     public userId!: string;
+
+    @commonState.Action
+    public UpdateUserId!: (newUserId) => void
+
+    @commonState.Action
+    public UpdateExistingApplication!: (newExistingApplication) => void
 
     error = "";
     applicationId = 0;
@@ -63,9 +68,7 @@ export default class PreQualification extends Vue {
             if (this.survey.data.willExists == 'n' && this.survey.data.qualifyingDiedAfterWESA == 'y' && this.survey.data.qualifyingTerms > 0 ) 
             {
                 if(this.userId !== ""){
-                    this.$router.push({ name: "surveys" });
-                } else {
-                    this.$router.push({ name: "qualified" });
+                    this.beginApplication();
                 }
                 
             } else {
@@ -73,6 +76,13 @@ export default class PreQualification extends Vue {
             }
         }
     }
+
+    public beginApplication() {
+        this.$store.dispatch("Application/UpdateInit", Vue.filter('get-current-version')());
+        this.UpdateUserId(this.userId);
+        this.UpdateExistingApplication(false); 
+        this.$router.push({name: "surveys" });        
+    }   
 
     public addSurveyListener(){
         this.survey.onValueChanged.add((sender, options) => { 
@@ -115,5 +125,4 @@ export default class PreQualification extends Vue {
         max-width: 950px;
         color: black;
     }
-
 </style>

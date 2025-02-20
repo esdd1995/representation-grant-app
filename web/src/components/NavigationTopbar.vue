@@ -21,7 +21,7 @@
                     />
                 </a>
                 <div class="navbar-brand navbar-text">
-                    Represent Someone Who Died <span style="font-size:10pt;">(also know as Probate)</span>
+                    Represent Someone Who Died <span style="font-size:10pt;">(also known as Probate)</span>
                     <span class="navbar-tag">BETA</span>
                 </div>
 

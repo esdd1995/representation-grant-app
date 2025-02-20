@@ -18,10 +18,9 @@
                     <b-row style="margin-left: 15rem;margin-right: 15rem;" class="info-section mb-2">
                         
                         <b-col cols="6" style="padding: 1rem 1rem 0rem 2rem;">
-                            <p style="font-weight: bold; margin-bottom: 0;">Step 1: Pre-qualify Questions</p>
+                            <p style="font-weight: bold; margin-bottom: 0;">Step 1: Is this service for you?</p>
                             <p class="mb-3">
-                                Answer qualifying questions to ensure that this service is appropriate for you to use. 
-                                Start by clicking New User – Let’s get started.
+                                Click “Let’s get started” to review application limitations.
                             </p>                            
                             <p style="font-weight: bold; margin-bottom: 0;">Step 2: Register or Login</p>
                             <p>
@@ -51,17 +50,17 @@
                     <b-card v-if="!isLoggedIn" style="border: none; margin-left: 25rem;margin-right: 25rem;" bg-variant="transparent">
                         <b-row class="how-works-section my-4">
                             <b-col style="padding: 0;"> 
-                                <b-row class="user-type justify-content-center">
+                                <!-- <b-row class="user-type justify-content-center">
                                     New Users
-                                </b-row>
+                                </b-row> -->
                                 <div class="row justify-content-center">                       
-                                    <a class="btn btn-primary text-white btn-lg register-button" style="padding-left: 4.5rem; padding-right: 4.5rem;" @click="navigate('new')">
+                                    <a class="btn btn-primary text-white btn-lg register-button" style="padding-left: 4.5rem; padding-right: 4.5rem;" @click="navigate('returning')">
                                         Let's get started
                                     </a>                        
                                 </div>
                             </b-col>
 
-                            <b-col style="padding: 0;">
+                            <!-- <b-col style="padding: 0;">
                                 <b-row class="user-type">
                                     Returning Users
                                 </b-row>
@@ -70,7 +69,7 @@
                                         Login with my <strong> Basic BCeID</strong>                                                                               
                                     </a>
                                 </div>
-                            </b-col>
+                            </b-col> -->
                         </b-row>
                     </b-card>
                 </b-card>
@@ -84,21 +83,20 @@
             <div class="m-3">
                 This service has only been developed for situations where:
                 <ul class="mt-3">    
-                    <li>Only a single person is applying for the Representation Grant.</li>
+                    <li>Only a single person is applying for the Representation Grant; and</li>
                     <li>You are one of the following:</li>
                     <ul>
-                        <li>a <b>spouse</b> of the deceased,</li>
-                        <li>a child of the deceased,</li>
-                        <li>someone who the deceased owed more than $10,000, or</li>
-                        <li>you can also be a <b>legal guardian, nominee</b> or <b>personal representative</b> for someone listed above.</li>
+                        <li>A <b>spouse</b> of the deceased,</li>
+                        <li>A <b>child</b> of the deceased,</li>
+                        <li>You can also be a <b>legal guardian, nominee</b> or <b>personal representative</b> for someone listed above.</li>
                     </ul>
                     <li>Even if you are one of the people listed above, this service can <b>NOT</b> help you if one of the deceased’s children has died before them and that child has children of their own.</li>
                 </ul>
-                <b>Note:</b> If there is no surviving spouse, descendant or creditor identified, other than yourself, at this time, this service cannot help you apply for a Representation Grant. For more information on who may need to be notified, refer to <a href="https://www.bclaws.gov.bc.ca/civix/document/id/complete/statreg/168_2009_03_1#subrule_d1e33580" target="_blank" >Supreme Court Civil Rule 25-2(2)</a>
+                <b>Note:</b> If there is no surviving spouse, descendant or creditor identified, other than yourself, this service cannot help you apply for a Representation Grant. For more information on who may need to be notified, refer to <a href="https://www.bclaws.gov.bc.ca/civix/document/id/complete/statreg/168_2009_03_1#subrule_d1e33580" target="_blank" >Supreme Court Civil Rule 25-2(2)</a>
             </div>
             <template v-slot:modal-footer>
                 <b-button variant="secondary" @click="openInfoModal = false">Close</b-button>
-                <b-button variant="primary" @click="confirmLogin()">Continue</b-button>
+                <b-button variant="primary" @click="goToLoginPage()">Continue</b-button>
             </template>
             <template v-slot:modal-header-close>
                 <b-button
@@ -155,6 +153,10 @@ export default class LandingPage extends Vue {
     public confirmLogin(){
         this.openInfoModal = false;
         this.$router.push({ name: "applicant-status" });
+    }
+    public goToLoginPage(){
+        this.openInfoModal = false;
+        this.$router.push({ name: "qualified" });
     }
     
     public determineUserType () {

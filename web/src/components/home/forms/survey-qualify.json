@@ -20,7 +20,7 @@
                         {
                             "type": "infotext",
                             "name": "qualifyingIntroExplanation",
-                            "title": "A Representation Grant costs money and will take time to get. Don't waste time on this service if you don't need one.\n<br><br>\nFor example, if the `deceased` had money in their bank account, that bank may give you that money to manage without a Representation Grant.<br><br>Different organizations have different policies to make sure that the right person gets the deceased's `assets`.\n<br><br>\nAsk each of the organizations that deal with the deceased's assets if they will give you the asset without a Representation Grant (also known as a Grant of `Probate`). If an organization will not give you an asset, they will likely ask you to get a Representation Grant.\n<br><br>\nIn addition, ask each of organizations that provided services to the deceased, (such as an electric company, phone company, credit card company, etc) if they will let you cancel the service without a Representation Grant.",
+                            "title": "A Representation Grant costs money and will take time to get. Don't waste time on this service if you don't need one.\n<br><br>\nFor example, if the `deceased` had money in their bank account, that bank may give you that money to manage without a Representation Grant.<br><br>Different organizations have different policies to make sure that the right person gets the deceased's `assets`.\n<br><br>\nAsk each of the organizations that deal with the deceased's assets if they will give you the asset without a Representation Grant (also known as a Grant of `Probate`). If an organization will not give you an asset, they will likely ask you to get a Representation Grant.\n<br><br>\nIn addition, ask each of the organizations that provided services to the deceased, (such as an electric company, phone company, credit card company, etc) if they will let you cancel the service without a Representation Grant.",
                             "isRequired": true,
                             "titleLocation": "hidden"
                         }
@@ -214,20 +214,6 @@
                     ],
                     "visible": false,
                     "visibleIf": "({qualifyingDiedAfterWESA} = 'y') and ({willExists} = 'n') and (({registeredIndian} = 'y' and {registeredIndianReferredToBC} = 'y') or ({registeredIndian} = 'n' and {registeredIndianEntitled} = 'y' and {registeredIndianReferredToBC} = 'y') or (({registeredIndian} = 'n' and {registeredIndianEntitled} = 'n'))  and (({needGrant} = 'y') or ({needGrant} = 'n' and {stillNeedGrant} = 'y')) and ({qualifyingTempScope} = 'y') and ({qualifyingIntroExplanation} > 0)"
-                },
-                {
-                    "type": "panel",
-                    "name": "qualifyingComplicationsPanel",
-                    "elements": [
-                        {
-                            "name": "qualifyingComplicationsExplanation",
-                            "title": "The next step is to create an account so that you can save your progress as you work through this service.",
-                            "titleLocation": "hidden",
-                            "type": "infotext"
-                        }
-                    ],
-                    "visible": false,
-                    "visibleIf": "({qualifyingTerms}>0) and (({qualifyingDiedAfterWESA} = 'y') and ({willExists} = 'n') and (({registeredIndian} = 'y' and {registeredIndianReferredToBC} = 'y') or ({registeredIndian} = 'n' and {registeredIndianEntitled} = 'y' and {registeredIndianReferredToBC} = 'y') or (({registeredIndian} = 'n' and {registeredIndianEntitled} = 'n'))  and (({needGrant} = 'y') or ({needGrant} = 'n' and {stillNeedGrant} = 'y')) and ({qualifyingTempScope} = 'y') and ({qualifyingIntroExplanation} > 0))"
                 }
             ],
             "title": "What is a Representation Grant?"
