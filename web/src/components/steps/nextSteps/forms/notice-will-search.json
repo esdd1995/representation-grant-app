@@ -57,7 +57,7 @@
             {
              "type": "infotext",
              "name": "willSearchTipC",
-             "title": "<b>SECTION C - SEARCH REQUEST DETAILS</b>\n<br><br>\nProvide information about the deceased here.\n<br><br>\n\n\"SURNAME\" means last name or family name.\n<br>\n\"Given Names\" means first name and middle names.\n<br><br>\nWhen you fill out the names, start with the surname in capital letters, and then add the given names. \n<ul>For example, with Alex Bowie Clark, the surname is Clark and the given names are Alex Bowie. For this form, write the name in as CLARK, Alex Bowie.</ul>\nMake sure to include all the different spellings and versions of {deceasedName}'s name you wrote down in the Form P10. \n",
+             "title": "<b>SECTION C - SEARCH REQUEST DETAILS</b>\n<br><br>\nProvide information about the deceased here.\n<br><br>\n\"SURNAME\" means last name or family name.\n<br>\n\"Given Names\" means first name and middle names.\n<br><br>\nWhen you fill out the names, start with the surname in capital letters, and then add the given names. \n<ul>For example, with Alex Bowie Clark, the surname is Clark and the given names are Alex Bowie. For this form, write the name in as CLARK, Alex Bowie.</ul>\nMake sure to include all the different spellings and versions of {deceasedName}'s name you wrote down in the Form P10. \n",
              "titleLocation": "hidden",
              "requiredErrorText": "Please press Continue"
             },
