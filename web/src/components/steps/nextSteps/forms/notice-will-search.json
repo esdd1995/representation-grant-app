@@ -80,7 +80,7 @@
            "visibleIf": "{willSearchDownloadExplanation} > 0"
           }
          ],      
-         "title": "Fill out an Application\n<br>\nfor Search of Wills Notice"
+         "title": "Fill out an Application for Search of Wills Notice"
       }
    ],
    "showQuestionNumbers": "off",
