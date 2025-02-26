@@ -10,7 +10,7 @@
             {
              "type": "infotext",
              "name": "willSearchDownloadExplanation",
-             "title": "This step will help you fill out the \"Application for Search of Wills Notice\". You need to do this step even if {deceasedName} did not make a `Will` so that The Court sees extra evidence that there is no Will. \n<br><br>\nIf you have already applied for a Search of Wills Notice, ensure that it was done with all of the names you identified in the Form P10. \n<br><br>\nIf there are different spellings or versions of {deceasedName}'s name on the Form P10 that aren't in your original Search of Wills Notice, you will need to do another \"Application for Search of Wills Notice\" with the extra names.\n<br><br>\n<a href=\"https://www2.gov.bc.ca/assets/gov/health/forms/vital-statistics/vsa532_fill.pdf\" target=\"blank\">Click here to download a blank \"Application for Search of Wills Notice\"</a>. (This link opens in a new tab)\n<br><br>\nTo open the PDF, you may need Adobe Reader (free to download) or other similar software. \n<br><br>\n<a href=\"https://get.adobe.com/reader/\" target=\"_blank\">Click here to down Adobe Reader for free.</a> (This link opens in a new tab)",
+             "title": "This step will help you fill out the \"Application for Search of Wills Notice\". You need to do this step even if {deceasedName} did not make a Will so that The Court is satisfied that there is no Will. \n<br><br>\nFor more information <a href=\"https://www2.gov.bc.ca/gov/content/life-events/death/wills-registry\" target=\"_blank\">click here</a> for the Wills Registry page.  (This link opens in a new tab)\n<br><br>\nIf you have already applied for a Search of Wills Notice, ensure that it was done with all of the names you identified in the Form P10. \n<br><br>\nIf there are different spellings or versions of [deceased name]'s name on the Form P10 that aren't in your original Search of Wills Notice, you will need to do another \"Application for Search of Wills Notice\" with the extra names.\n<br><br>\n<a href=\"https://www2.gov.bc.ca/assets/gov/health/forms/vital-statistics/vsa532_fill.pdf\" target=\"_blank\">Click here to download a blank \"Application for Search of Wills Notice\"</a>. (This link opens in a new tab)\n<br><br>\nTo open the PDF, you may need Adobe Reader (free to download) or other similar software. \n<br><br>\n<a href=\"https://get.adobe.com/reader/\" target=\"_blank\">Click here to download Adobe Reader for free.</a> (This link opens in a new tab)",
              "titleLocation": "hidden",
              "isRequired": true,
              "requiredErrorText": "Please press Continue"
@@ -36,14 +36,14 @@
             {
              "type": "infotext",
              "name": "willSearchTip1",
-             "title": "<b>Applicant's Information</b>\n<br><br>\n\"RELATIONSHIP TO THE SUBJECT OF THE WILL SEARCH\" means your relationship to {deceasedName}. This should be either spouse or child.",
+             "title": "<b>Applicant's Information</b>\n<br><br>\nFill in information about yourself.\n<br><br>\n\"RELATIONSHIP TO THE SUBJECT OF THE WILL SEARCH\" means your relationship to {deceasedName}. For example, write \"spouse\", \"child\", or the relationship as the case may be.",
              "titleLocation": "hidden",
              "requiredErrorText": "Please press Continue"
             },
             {
              "type": "infotext",
              "name": "willSearchTipA",
-             "title": "<b>SECTION A - APPLICATION FOR WILLS SEARCH</b>\n<br><br>\nMake sure you have a photo copy of the `Certificate of Death` included when you send your \"Application fo Search of Wills Notice.\"",
+             "title": "<b>SECTION A - APPLICATION FOR WILLS SEARCH</b>\n<br><br>\nMake sure you have a photocopy of the `Certificate of Death` included when you send your \"Application for Search of Wills Notice.\" Your signature is required in Section A.\n<br><br>\nIf the person died in BC and you have not obtained the death certificate, <a href=\"https://www2.gov.bc.ca/gov/content/life-events/death/death-certificates\" target=\"_blank\">click here</a> for more information on how to obtain one. (This link opens in a new tab)\n<br><br>\nIf the person died outside of BC, you must obtain an official death certificate from the authorities where the death occurred.",
              "titleLocation": "hidden",
              "requiredErrorText": "Please press Continue"
             },
@@ -57,14 +57,21 @@
             {
              "type": "infotext",
              "name": "willSearchTipC",
-             "title": "<b>SECTION C - SEARCH REQUEST DETAILS</b>\n<br><br>\n\n\"SURNAME\" also means Last Name or Family name.\n<br>\n\"Given Name\" also means First Name and Middle Names.\n<br><br>\nWhen you fill out the names, start with the Surname, and then add the given names. \n<ul>For example, with Alex Bowie Clark, the Surname is Clark and the given names are Alex Bowie. For this form, write the name in as Clark, Alex Bowie.</ul>\nMake sure to include all the the different spellings and versions of {deceasedName}'s name you wrote down for the Form P10. \n",
+             "title": "<b>SECTION C - SEARCH REQUEST DETAILS</b>\n<br><br>\n\n\"SURNAME\" means last name or family name.\n<br>\n\"Given Names\" means first name and middle names.\n<br><br>\nWhen you fill out the names, start with the surname in capital letters, and then add the given names. \n<ul>For example, with Alex Bowie Clark, the surname is Clark and the given names are Alex Bowie. For this form, write the name in as CLARK, Alex Bowie.</ul>\nMake sure to include all the different spellings and versions of {deceased name}'s name you wrote down in the Form P10. \n",
+             "titleLocation": "hidden",
+             "requiredErrorText": "Please press Continue"
+            },
+            {
+             "type": "infotext",
+             "name": "willSearchTipPayment",
+             "title": "<b>PAYMENT METHODS</b>\n<br><br>\nIf you are making the application by mail, complete this section with payment information and sign it. If you are making the application in-person at a Service BC Centre, leave this section blank.",
              "titleLocation": "hidden",
              "requiredErrorText": "Please press Continue"
             },
             {
              "type": "infotext",
              "name": "willSearchTipPrint",
-             "title": "<b>Save the document</b>\n<br><br>\nSave and Print the information you entered into the Application for Search of Wills Notice.\n<br><br>\nSend the Application for Search of Wills Notice to Vital Statistics Agency using the contact information on Page 2. This form does not go to The Court. \n<br><br>\nVital Statistics Agency will send you a document called \"Search of Wills Notice\" when they are done with their search. <b>You will need to include 2 copies of the \"Search of Wills Notice\"in your application to The Court.</b>",
+             "title": "<b>Save and print the document</b>\n<br><br>\nYou have the option to save this document to your computer and/or you can press the <b>Print</b> button at the top or bottom of the PDF.\n<br><br>\nSend the Application for Search of Wills Notice to Vital Statistics Agency using the contact information on Page 2. This form does not go to The Court.\n<br><br>\nVital Statistics Agency will send you a document called \"Search of Wills Notice\" when they are done with their search. <b>You will need to include 2 copies of the \"Search of Wills Notice\" in your application to The Court.</b>",
              "titleLocation": "hidden",
              "requiredErrorText": "Please press Continue"
             }
@@ -73,7 +80,7 @@
            "visibleIf": "{willSearchDownloadExplanation} > 0"
           }
          ],      
-         "title": "How to fill out a Notice of Will Search"
+         "title": "Fill out an Application\n<br>\nfor Search of Wills Notice"
       }
    ],
    "showQuestionNumbers": "off",

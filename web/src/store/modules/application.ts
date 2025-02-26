@@ -515,7 +515,7 @@ class Application extends VuexModule {
         p = {} as pageInfoType;
         p.key = "2";
         p.name = "NoticeWillSearch";
-        p.label = "How to fill out a Notice of Will Search";        
+        p.label = "Fill out an Application for Search of Wills Notice";        
         p.active = true;
         p.progress = 0;
         s.pages.push(p);
