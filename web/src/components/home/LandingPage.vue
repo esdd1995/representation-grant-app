@@ -10,6 +10,28 @@
                         This service will help you fill out the court forms required to apply for a <tooltip class="ml-1" size="xl" :index="0" title='Representation Grant'/> 
                         from the Supreme Court of British Columbia when the deceased did not leave a will. 
                     </b-row>
+                    <b-row style="margin-left: 15rem;margin-right: 15rem;" class="info-section mt-5">
+                        <b-col style="padding: 1rem;">
+                            <div>Presently, this service <b>can only be used if:</b></div>
+                            <div><b-icon icon="check-circle-fill" variant="success" class="mr-2"></b-icon><b>Only one person</b> is applying for the Representation Grant.</div>
+                            <div><b-icon icon="check-circle-fill" variant="success" class="mr-2"></b-icon>You are <b>one of the following:</b></div>
+                            <ul class="mt-3">    
+                                <li>
+                                    The <b>spouse</b> of the deceased
+                                </li>
+                                <li>
+                                    A <b>child</b> of the deceased
+                                </li>
+                                <li>
+                                    A <b>legal guardian, nominee, or personal representative</b> acting for someone listed above
+                                </li>
+                            </ul>
+                            <div class="mt-3"><b>This service CANNOT be used if:</b></div>
+                            <div><b-icon icon="x-circle-fill" variant="danger" class="mr-2"></b-icon>One of the deceased's <b>children passed away before them</b> and that child has children of their own.</div>
+                            <div><b-icon icon="x-circle-fill" variant="danger" class="mr-2"></b-icon>There is <b>no surviving spouse, descendant, or creditor</b> (other than yourself) who can be identified at this time.</div>
+                            <div class="mt-3">For more details on who may need to be notified, refer to <a href="https://www.bclaws.gov.bc.ca/civix/document/id/complete/statreg/168_2009_03_1#subrule_d1e33580" target="_blank">Supreme Court Civil Rule 25-2(2)</a></div>
+                        </b-col>
+                    </b-row>
                     
                     <b-row class="mt-5 justify-content-center">
                         <h3>How it Works?</h3>
@@ -20,11 +42,11 @@
                         <b-col cols="6" style="padding: 1rem 1rem 0rem 2rem;">
                             <p style="font-weight: bold; margin-bottom: 0;">Step 1: Is this service for you?</p>
                             <p class="mb-3">
-                                Click “Let’s get started” to review application limitations.
+                                Click "Let's get started" to review application limitations.
                             </p>                            
                             <p style="font-weight: bold; margin-bottom: 0;">Step 2: Register or Login</p>
                             <p>
-                                You will need a Basic BCeID account. If you do not currently have a Basic BCeID account 
+                                You will need a Basic BCeID account. If you do not currently have a Basic BCeID 
                                 you can register for one after completing Step 1.
                             </p>
                         </b-col>
@@ -47,29 +69,29 @@
                         </b-col>                           
                     </b-row>
 
-                    <b-card v-if="!isLoggedIn" style="border: none; margin-left: 25rem;margin-right: 25rem;" bg-variant="transparent">
+                    <b-card v-if="!isLoggedIn" style="border: none; margin-left: 15rem;margin-right: 15rem;" bg-variant="transparent">
                         <b-row class="how-works-section my-4">
                             <b-col style="padding: 0;"> 
-                                <!-- <b-row class="user-type justify-content-center">
+                                <b-row class="user-type justify-content-center">
                                     New Users
-                                </b-row> -->
+                                </b-row>
                                 <div class="row justify-content-center">                       
-                                    <a class="btn btn-primary text-white btn-lg register-button" style="padding-left: 4.5rem; padding-right: 4.5rem;" @click="navigate('returning')">
-                                        Let's get started
+                                    <a class="btn btn-primary btn-lg text-white btn-lg register-button" style="padding-left: 3.5rem; padding-right: 3.5rem;" @click="navigate('new')">
+                                        Register for a <strong>Basic</strong> BCeID
                                     </a>                        
                                 </div>
                             </b-col>
 
-                            <!-- <b-col style="padding: 0;">
+                            <b-col style="padding: 0;">
                                 <b-row class="user-type">
                                     Returning Users
                                 </b-row>
                                 <div class="row justify-content-center">
-                                    <a class="btn btn-primary btn-lg bg-warning login-button" @click="navigate('returning')">
-                                        Login with my <strong> Basic BCeID</strong>                                                                               
+                                    <a class="btn btn-primary btn-lg bg-warning login-button" style="padding-left: 3.5rem; padding-right: 3.5rem;" @click="navigate('returning')">
+                                        Use an existing <strong>Basic</strong> BCeID                                                                               
                                     </a>
                                 </div>
-                            </b-col> -->
+                            </b-col>
                         </b-row>
                     </b-card>
                 </b-card>
@@ -90,7 +112,7 @@
                         <li>A <b>child</b> of the deceased,</li>
                         <li>You can also be a <b>legal guardian, nominee</b> or <b>personal representative</b> for someone listed above.</li>
                     </ul>
-                    <li>Even if you are one of the people listed above, this service can <b>NOT</b> help you if one of the deceased’s children has died before them and that child has children of their own.</li>
+                    <li>Even if you are one of the people listed above, this service can <b>NOT</b> help you if one of the deceased's children has died before them and that child has children of their own.</li>
                 </ul>
                 <b>Note:</b> If there is no surviving spouse, descendant or creditor identified, other than yourself, this service cannot help you apply for a Representation Grant. For more information on who may need to be notified, refer to <a href="https://www.bclaws.gov.bc.ca/civix/document/id/complete/statreg/168_2009_03_1#subrule_d1e33580" target="_blank" >Supreme Court Civil Rule 25-2(2)</a>
             </div>
@@ -114,6 +136,7 @@
 import { Component, Vue } from 'vue-property-decorator';
 import { SessionManager } from "@/components/utils/utils";
 import Tooltip from "@/components/survey/Tooltip.vue"
+import { getBCEIDUrl } from "@/components/utils/utils";
 
 @Component({
     components:{
@@ -142,13 +165,14 @@ export default class LandingPage extends Vue {
     }
   
     public navigate(userType) {
-        
         if (userType === "new") {
-            this.$router.push({ name: "pre-qualification" });
+            //Register a BCeID
+            window.location.replace(getBCEIDUrl());
         } else if (userType === "returning") {
-            this.openInfoModal = true  
+            //Login BCeID
+            this.$router.push({ name: "surveys" });
         }  
-    }
+    }  
 
     public confirmLogin(){
         this.openInfoModal = false;
@@ -158,7 +182,7 @@ export default class LandingPage extends Vue {
         this.openInfoModal = false;
         this.$router.push({ name: "qualified" });
     }
-    
+
     public determineUserType () {
       
         this.$http.get('/app-list/')
