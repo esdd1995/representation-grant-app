@@ -336,6 +336,11 @@ $step-header-hover-color: #efefef;
             &:active {
                 outline: none;
             }
+            div {
+                display: block;
+                text-indent: 0; 
+                padding-left: 1.8em;
+            }
         }
     }
 }
