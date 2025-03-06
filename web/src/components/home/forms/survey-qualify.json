@@ -214,20 +214,6 @@
                     ],
                     "visible": false,
                     "visibleIf": "({qualifyingDiedAfterWESA} = 'y') and ({willExists} = 'n') and (({registeredIndian} = 'y' and {registeredIndianReferredToBC} = 'y') or ({registeredIndian} = 'n' and {registeredIndianEntitled} = 'y' and {registeredIndianReferredToBC} = 'y') or (({registeredIndian} = 'n' and {registeredIndianEntitled} = 'n'))  and (({needGrant} = 'y') or ({needGrant} = 'n' and {stillNeedGrant} = 'y')) and ({qualifyingTempScope} = 'y') and ({qualifyingIntroExplanation} > 0)"
-                },
-                {
-                    "type": "panel",
-                    "name": "qualifyingComplicationsPanel",
-                    "elements": [
-                        {
-                            "name": "qualifyingComplicationsExplanation",
-                            "title": "The next step is to create an account so that you can save your progress as you work through this service.",
-                            "titleLocation": "hidden",
-                            "type": "infotext"
-                        }
-                    ],
-                    "visible": false,
-                    "visibleIf": "({qualifyingTerms}>0) and (({qualifyingDiedAfterWESA} = 'y') and ({willExists} = 'n') and (({registeredIndian} = 'y' and {registeredIndianReferredToBC} = 'y') or ({registeredIndian} = 'n' and {registeredIndianEntitled} = 'y' and {registeredIndianReferredToBC} = 'y') or (({registeredIndian} = 'n' and {registeredIndianEntitled} = 'n'))  and (({needGrant} = 'y') or ({needGrant} = 'n' and {stillNeedGrant} = 'y')) and ({qualifyingTempScope} = 'y') and ({qualifyingIntroExplanation} > 0))"
                 }
             ],
             "title": "What is a Representation Grant?"
