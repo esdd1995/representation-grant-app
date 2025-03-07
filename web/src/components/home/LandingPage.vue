@@ -1,21 +1,21 @@
 <template>
     <b-card v-if="pageReady" id="landing-page" class="wrap fill-body" border-variant="white">
        
-        <b-row class="mt-3">
+        <b-row>
             <b-col>
-                <b-row class="h1 justify-content-center" style="color: black;">Represent Someone Who Died (also known as Probate)</b-row>
+                <b-row class="h1 justify-content-center" style="color: black; margin-bottom: 0 !important;">Represent Someone Who Died (also known as Probate)</b-row>
                 <b-card style="border: none; color: black;" bg-variant="transparent">
                     
-                    <b-row class="h4 justify-content-center mb-5" style="margin-left: 25rem;margin-right: 25rem;">
-                        This service will help you fill out the court forms required to apply for a <tooltip class="ml-1" size="xl" :index="0" title='Representation Grant'/> 
-                        from the Supreme Court of British Columbia when the deceased did not leave a will. 
-                    </b-row>
-                    <b-row style="margin-left: 15rem;margin-right: 15rem;" class="info-section mt-5">
-                        <b-col style="padding: 1rem;">
-                            <div>Presently, this service <b>can only be used if:</b></div>
+                    <b-row style="margin-left: 15rem;margin-right: 15rem;" class="info-section">
+                        <b-col cols="12" class="text-center"><div class="h4 text-center mt-1">This service will help you fill out the court forms required to apply for a <tooltip class="ml-1" size="xl" :index="0" title='Representation Grant'/> 
+                            from the Supreme Court of British Columbia when the deceased did not leave a will. </div>
+                        </b-col>
+                        <b-col cols="6" style="padding-left: 1rem;">
+                            <div class="mt-1">Presently, this service <b>can only be used if:</b></div>
+                            <div><b-icon icon="check-circle-fill" variant="success" class="mr-2"></b-icon>The deceased <b>did not leave a will.</b></div>
                             <div><b-icon icon="check-circle-fill" variant="success" class="mr-2"></b-icon><b>Only one person</b> is applying for the Representation Grant.</div>
                             <div><b-icon icon="check-circle-fill" variant="success" class="mr-2"></b-icon>You are <b>one of the following:</b></div>
-                            <ul class="mt-3">    
+                            <ul class="mt-1">    
                                 <li>
                                     The <b>spouse</b> of the deceased
                                 </li>
@@ -26,31 +26,31 @@
                                     A <b>legal guardian, nominee, or personal representative</b> acting for someone listed above
                                 </li>
                             </ul>
-                            <div class="mt-3"><b>This service CANNOT be used if:</b></div>
+                        </b-col>
+                        <b-col cols="6" style="padding-left: 1rem;">
+                            <div><b>This service CANNOT be used if:</b></div>
                             <div><b-icon icon="x-circle-fill" variant="danger" class="mr-2"></b-icon>One of the deceased's <b>children passed away before them</b> and that child has children of their own.</div>
                             <div><b-icon icon="x-circle-fill" variant="danger" class="mr-2"></b-icon>There is <b>no surviving spouse, descendant, or creditor</b> (other than yourself) who can be identified at this time.</div>
-                            <div class="mt-3">For more details on who may need to be notified, refer to <a href="https://www.bclaws.gov.bc.ca/civix/document/id/complete/statreg/168_2009_03_1#subrule_d1e33580" target="_blank">Supreme Court Civil Rule 25-2(2)</a></div>
                         </b-col>
                     </b-row>
                     
-                    <b-row class="mt-5 justify-content-center">
-                        <h3>How it Works?</h3>
-                    </b-row>
                     
-                    <b-row style="margin-left: 15rem;margin-right: 15rem;" class="info-section mb-2">
-                        
-                        <b-col cols="6" style="padding: 1rem 1rem 0rem 2rem;">
-                            <p style="font-weight: bold; margin-bottom: 0;">Step 1: Is this service for you?</p>
+                    
+                    <b-row style="margin-left: 15rem;margin-right: 15rem;" class="info-section-blue mt-2">
+                        <b-col cols="12" class="text-center mt-1">
+                            <h3>How it Works?</h3>
+                        </b-col>
+                        <b-col cols="6" style="padding-left: 1rem;">
+                            <p style="font-weight: bold; margin-bottom: 0;">Step 1: Register or Login</p>
                             <p class="mb-3">
-                                Click "Let's get started" to review application limitations.
+                                You will need a Basic BCeID account. If you do not currently have a Basic BCeID account you can register for one.
                             </p>                            
-                            <p style="font-weight: bold; margin-bottom: 0;">Step 2: Register or Login</p>
+                            <p style="font-weight: bold; margin-bottom: 0;">Step 2: Pre-qualifying Questions</p>
                             <p>
-                                You will need a Basic BCeID account. If you do not currently have a Basic BCeID 
-                                you can register for one after completing Step 1.
+                                Once logged in, click Begin New Session to answer questions to ensure that this service is appropriate for you to use.
                             </p>
                         </b-col>
-                        <b-col cols="6" style="padding: 1rem 1rem 0rem 1rem;">
+                        <b-col cols="6" style="padding-left: 1rem;">
                             <p style="font-weight: bold; margin-bottom: 0;">Step 3: Answer Questions</p>
                             <p>
                                 Our secure online questionnaire uses your answers to fill out the court forms required. 
@@ -60,7 +60,7 @@
                             <p>
                                 Once you're done with the questionnaire, you will need to print your court forms and 
                                 file them at your local 
-                                <a 
+                                <a style="color: white;"
                                     href="https://www2.gov.bc.ca/gov/content/justice/courthouse-services/courthouse-locations"
                                     target="_blank">
                                     Supreme Court registry
@@ -70,7 +70,7 @@
                     </b-row>
 
                     <b-card v-if="!isLoggedIn" style="border: none; margin-left: 15rem;margin-right: 15rem;" bg-variant="transparent">
-                        <b-row class="how-works-section my-4">
+                        <b-row class="how-works-section">
                             <b-col style="padding: 0;"> 
                                 <b-row class="user-type justify-content-center">
                                     New Users
@@ -264,6 +264,13 @@ export default class LandingPage extends Vue {
         margin-top: 0.5rem;
         background-color: rgba($gov-pale-grey, 0.75);
         color: black;
+    }
+    .info-section-blue {
+        border: 2px solid rgba($gov-pale-blue, 0.8);
+        border-radius: 18px;
+        margin-top: 0.5rem;
+        background-color: rgba($gov-pale-blue, 0.75);
+        color: white;
     }
 
     .user-type {
